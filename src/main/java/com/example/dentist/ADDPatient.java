@@ -36,7 +36,7 @@ public class ADDPatient {
         String data="";
         //il faut penser a utiliser une autre methode d ecriture dans le fichier qui support l ecriture dans plusieur files en meme temps afin d optimiser le programme
         Patient p = new Patient(Integer.parseInt(this.IDPatient.getText()),this.Nom.getText(),this.Prenom.getText(),dateN,this.Sexe.getText(),this.CIN.getText());
-        File file1 = new File("C:\\Users\\Anasa\\Desktop\\test2\\archive_patient.txt");
+        File file1 = new File("src/main/java/com/example/test2/archive_patient.txt");
         try {
             Scanner s = new Scanner(file1);
             if(s.hasNextLine())
@@ -56,7 +56,7 @@ public class ADDPatient {
             e.printStackTrace();
         }
         String fichier = p.getIDPatient()+".txt";
-        File file2 = new File("C:\\Users\\Anasa\\Desktop\\test2\\patient\\"+fichier);
+        File file2 = new File("src/main/java/com/example/test2/patient/"+fichier);
         if(!file2.exists()){
             try{
                 file2.createNewFile();

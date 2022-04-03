@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="766.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-2.322021484375" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
          <image>
-            <Image url="C:\Users\Anasa\Desktop\Dribble\Desktop\1366120.jpg" />
+            <Image url="@uploads/1366120.jpg" />
          </image>
       </ImageView>
       <AnchorPane id="cont-sec" fx:id="cont_s" layoutX="14.0" layoutY="88.0" opacity="0.95" prefHeight="368.0" prefWidth="300.0" style="-fx-background-radius: 3; -fx-background-color: white;">
@@ -31,13 +31,13 @@
             <TextField fx:id="tfadress" layoutX="23.0" layoutY="121.0" prefHeight="41.0" prefWidth="259.0" promptText="adress" style="-fx-border-radius: 6; -fx-background-radius: 6;" />
             <ImageView fitHeight="41.0" fitWidth="29.0" layoutX="241.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="C:\Users\Anasa\Desktop\Dribble\mail.png" />
+                  <Image url="@uploads/mail.png" />
                </image>
             </ImageView>
             <PasswordField fx:id="tfpassword" layoutX="23.0" layoutY="184.0" prefHeight="41.0" prefWidth="259.0" promptText="password" style="-fx-border-radius: 6; -fx-background-radius: 6;" />
             <ImageView fitHeight="41.0" fitWidth="29.0" layoutX="241.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="C:\Users\Anasa\Desktop\Dribble\hide.png" />
+                  <Image url="@uploads/hide.png" />
                </image>
             </ImageView>
          </children>

@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd32fcd9-1fa7-43f6-b945-712280323eb4" name="Changes" comment="" />
+    <list default="true" id="cd32fcd9-1fa7-43f6-b945-712280323eb4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/ADDPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/ADDPatient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/authentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/authentification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Assistant_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Assistant_List.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Patient_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Patient_List.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/acceuil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/authentification.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/authentification.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/ADDPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/ADDPatient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Assistant_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Assistant_List.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient_List.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/acceuil.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +91,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="cd32fcd9-1fa7-43f6-b945-712280323eb4" name="Changes" comment="" />
-      <changelist id="" name="test" comment="" />
       <created>1648458905265</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

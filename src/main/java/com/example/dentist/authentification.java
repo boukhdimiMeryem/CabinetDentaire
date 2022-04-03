@@ -43,7 +43,7 @@ public class authentification{
         String adress = tfadress.getText();
         String password = tfpassword.getText();
         byte test = 0;
-        File file = new File("C:\\Users\\Anasa\\Desktop\\test2\\COMBOLIST.txt");
+        File file = new File("src/main/java/com/example/test2/COMBOLIST.txt");
         if (!file.exists()) {
             System.out.println("file dont found");
         } else {

@@ -104,7 +104,7 @@ public class PatientList implements Initializable {
         String fichier = "";
         byte m=0;
         byte test=0;
-        File file = new File("C:\\Users\\Anasa\\Desktop\\test2\\archive_patient.txt");
+        File file = new File("src/main/java/com/example/test2/archive_patient.txt");
         LocalDate localDate = LocalDate.now(Clock.systemDefaultZone());
         ObservableList<Patient> L = FXCollections.observableArrayList();
         if (!file.exists()) System.out.println("file doesn't exist");
@@ -123,7 +123,7 @@ public class PatientList implements Initializable {
                         ID += res[k];
                     }
                     ID += ".txt";
-                    String path = "C:\\Users\\Anasa\\Desktop\\test2\\patient\\" + ID;
+                    String path = "src/main/java/com/example/test2/patient/" + ID;
                     File file2 = new File(path);
                     if (!file2.exists()) System.out.println("second file doesn't exist");
                     else {
