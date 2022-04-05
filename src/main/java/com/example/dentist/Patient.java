@@ -2,7 +2,11 @@ package com.example.dentist;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -30,7 +34,6 @@ public class Patient {
     public Patient(){
 
     }
-
 
     public int getIDPatient() {
         return IDPatient;
