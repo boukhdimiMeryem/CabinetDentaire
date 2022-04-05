@@ -1,0 +1,139 @@
+Index: src/main/java/com/example/dentist/Patient.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.dentist;\n\nimport javafx.fxml.FXML;\nimport javafx.scene.control.Button;\n\nimport java.time.LocalDate;\nimport java.util.Date;\n\npublic class Patient {\n    private int IDPatient;\n    private String Nom;\n    private String Prenom;\n    private String Sexe;\n    private String CIN;\n    private String DateNaissance;\n    private Button button;\n    //il faut trouver une solution pour que DateNaissance soit de type Date\n    //il faut faire en sorte que l'ID du patient s'auto incremente\n\n\n    public Patient(int IDPatient,String Nom,String Prenom,String DateNaissance,String Sexe,String CIN){\n        this.IDPatient=IDPatient;\n        this.Nom=Nom;\n        this.Prenom=Prenom;\n        this.Sexe=Sexe;\n        this.CIN=CIN;\n        this.DateNaissance=DateNaissance;\n        this.button= new Button(\"delete\");\n    }\n    public Patient(){\n\n    }\n\n\n    public int getIDPatient() {\n        return IDPatient;\n    }\n\n    public void setIDPatient(int IDPatient) {\n        this.IDPatient = IDPatient;\n    }\n\n    public String getNom() {\n        return Nom;\n    }\n\n    public void setNom(String nom) {\n        Nom = nom;\n    }\n\n    public String getPrenom() {\n        return Prenom;\n    }\n\n    public void setPrenom(String prenom) {\n        Prenom = prenom;\n    }\n\n    public String getSexe() {\n        return Sexe;\n    }\n\n    public void setSexe(String sexe) {\n        Sexe = sexe;\n    }\n\n    public String getCIN() {\n        return CIN;\n    }\n\n    public void setCIN(String CIN) {\n        this.CIN = CIN;\n    }\n\n    public String getDateNaissance() {\n        return DateNaissance;\n    }\n\n    public void setDateNaissance(Date DateNaissance) {\n        DateNaissance = DateNaissance;\n    }\n\n    public Button getButton() {\n        return button;\n    }\n\n    public void setButton(Button button) {\n        this.button = button;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/dentist/Patient.java b/src/main/java/com/example/dentist/Patient.java
+--- a/src/main/java/com/example/dentist/Patient.java	(revision 60e991daf523d0335ddb6c818f10ab854ec09651)
++++ b/src/main/java/com/example/dentist/Patient.java	(date 1649165349210)
+@@ -2,7 +2,11 @@
+ 
+ import javafx.fxml.FXML;
+ import javafx.scene.control.Button;
++import javafx.scene.image.Image;
++import javafx.scene.image.ImageView;
+ 
++import java.io.FileInputStream;
++import java.io.IOException;
+ import java.time.LocalDate;
+ import java.util.Date;
+ 
+@@ -31,7 +35,6 @@
+ 
+     }
+ 
+-
+     public int getIDPatient() {
+         return IDPatient;
+     }
+Index: src/main/java/com/example/dentist/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.dentist;\n\nimport javafx.application.Application;\nimport javafx.fxml.FXMLLoader;\nimport javafx.scene.Scene;\nimport javafx.stage.Stage;\nimport javafx.stage.StageStyle;\n\nimport java.io.IOException;\n\npublic class Main extends Application {\n    @Override\n    public void start(Stage stage) throws IOException {\n        FXMLLoader root = new FXMLLoader(Main.class.getResource(\"authentification.fxml\"));\n        Scene scene = new Scene(root.load(), 766, 515);\n        stage.setTitle(\"Dental Application\");\n        stage.setScene(scene);\n        scene.getStylesheets().add(getClass().getResource(\"Style.css\").toExternalForm());\n        stage.setResizable(false);\n        stage.show();\n    }\n\n    public static void main(String[] args) {\n        launch();\n    }\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/dentist/Main.java b/src/main/java/com/example/dentist/Main.java
+--- a/src/main/java/com/example/dentist/Main.java	(revision 60e991daf523d0335ddb6c818f10ab854ec09651)
++++ b/src/main/java/com/example/dentist/Main.java	(date 1649164767715)
+@@ -11,7 +11,7 @@
+ public class Main extends Application {
+     @Override
+     public void start(Stage stage) throws IOException {
+-        FXMLLoader root = new FXMLLoader(Main.class.getResource("authentification.fxml"));
++        FXMLLoader root = new FXMLLoader(Main.class.getResource("Patient_List.fxml"));
+         Scene scene = new Scene(root.load(), 766, 515);
+         stage.setTitle("Dental Application");
+         stage.setScene(scene);
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"cd32fcd9-1fa7-43f6-b945-712280323eb4\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/dentist/ADDPatient.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/dentist/ADDPatient.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/dentist/authentification.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/dentist/authentification.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/dentist/Assistant_List.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/dentist/Assistant_List.fxml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/dentist/Patient_List.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/dentist/Patient_List.fxml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/dentist/acceuil.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/dentist/acceuil.fxml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/dentist/authentification.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/dentist/authentification.fxml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/dentist/ADDPatient.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/dentist/ADDPatient.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/dentist/Assistant_List.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/dentist/Assistant_List.fxml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/dentist/Patient_List.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/dentist/Patient_List.fxml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/dentist/acceuil.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/dentist/acceuil.fxml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/dentist/authentification.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/dentist/authentification.class\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/example/dentist/authentification.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/example/dentist/authentification.fxml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"FxmlFile\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitSEFilterConfiguration\">\n    <file-type-list>\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\n      <filtered-out-file-type name=\"TAG\" />\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\n    </file-type-list>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"270ZKz8LRupC2NJZZSVvP7AsG7P\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\n    <property name=\"last_directory_selection\" value=\"$PROJECT_DIR$/src/main/java/com/example/dentist\" />\n    <property name=\"settings.editor.selected.configurable\" value=\"project.propVCSSupport.DirectoryMappings\" />\n  </component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveFile.RECENT_KEYS\">\n      <recent name=\"C:\\Users\\Anasa\\IdeaProjects\\Dentist\\src\\main\\resources\\com\\example\\dentist\" />\n      <recent name=\"C:\\Users\\Anasa\\IdeaProjects\\Dentist\\src\\main\\java\\com\\example\\dentist\" />\n      <recent name=\"C:\\Users\\Anasa\\IdeaProjects\\Dentist\\src\" />\n    </key>\n  </component>\n  <component name=\"RunManager\">\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.dentist.Main\" />\n      <module name=\"Dentist\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.example.dentist.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.Main\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"cd32fcd9-1fa7-43f6-b945-712280323eb4\" name=\"Changes\" comment=\"\" />\n      <created>1648458905265</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1648458905265</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\n    <expand>\n      <path>\n        <item name=\"Dentist\" type=\"b2602c69:ProjectViewProjectNode\" />\n        <item name=\"Dentist\" type=\"462c0819:PsiDirectoryNode\" />\n      </path>\n      <path>\n        <item name=\"Dentist\" type=\"b2602c69:ProjectViewProjectNode\" />\n        <item name=\"Dentist\" type=\"462c0819:PsiDirectoryNode\" />\n        <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n      </path>\n      <path>\n        <item name=\"Dentist\" type=\"b2602c69:ProjectViewProjectNode\" />\n        <item name=\"Dentist\" type=\"462c0819:PsiDirectoryNode\" />\n        <item name=\"src\" type=\"462c0819:PsiDirectoryNode\" />\n        <item name=\"main\" type=\"462c0819:PsiDirectoryNode\" />\n      </path>\n    </expand>\n    <select />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 60e991daf523d0335ddb6c818f10ab854ec09651)
++++ b/.idea/workspace.xml	(date 1649175193959)
+@@ -6,20 +6,10 @@
+   <component name="ChangeListManager">
+     <list default="true" id="cd32fcd9-1fa7-43f6-b945-712280323eb4" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/ADDPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/ADDPatient.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/authentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/authentification.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Assistant_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Assistant_List.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Patient_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Patient_List.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/acceuil.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/authentification.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/authentification.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/ADDPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/ADDPatient.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Assistant_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Assistant_List.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient_List.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/acceuil.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/Patient.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Main.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -35,6 +25,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="PREVIOUS_COMMIT_AUTHORS">
++      <list>
++        <option value="Anas Aziach &lt;aziach.anas@student.emi.ac.ma&gt;" />
++      </list>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitSEFilterConfiguration">
+@@ -58,9 +53,16 @@
+     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/example/dentist" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/test2" />
++    <property name="project.structure.last.edited" value="Modules" />
++    <property name="project.structure.proportion" value="0.0" />
++    <property name="project.structure.side.proportion" value="0.0" />
+     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+   </component>
+   <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\Anasa\IdeaProjects\Dentist\src\main\java\com\example\test2" />
++    </key>
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\Anasa\IdeaProjects\Dentist\src\main\resources\com\example\dentist" />
+       <recent name="C:\Users\Anasa\IdeaProjects\Dentist\src\main\java\com\example\dentist" />
+@@ -96,6 +98,14 @@
+       <option name="presentableId" value="Default" />
+       <updated>1648458905265</updated>
+     </task>
++    <task id="LOCAL-00001" summary="fix bugs">
++      <created>1649011829114</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1649011829116</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -108,6 +118,10 @@
+         </entry>
+       </map>
+     </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="fix bugs" />
++    <option name="LAST_COMMIT_MESSAGE" value="fix bugs" />
+   </component>
+   <component name="XSLT-Support.FileAssociations.UIState">
+     <expand>
