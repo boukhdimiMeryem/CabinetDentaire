@@ -138,6 +138,7 @@ public class PatientList implements Initializable {
                         }
                     }
                 }
+                s.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }

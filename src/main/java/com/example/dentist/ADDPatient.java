@@ -16,9 +16,6 @@ public class ADDPatient {
     private TextField CIN;
 
     @FXML
-    private TextField IDPatient;
-
-    @FXML
     private TextField Nom;
 
     @FXML
@@ -30,12 +27,26 @@ public class ADDPatient {
     @FXML
     private DatePicker DateNaissance;
 
+    @FXML
+    public int NextID() throws FileNotFoundException {
+        File file = new File("src/main/java/com/example/test2/archive_patient.txt");
+        Scanner s = new Scanner(file);
+        String data="";
+        if(s.hasNextLine()) {
+            while (s.hasNextLine()) {
+                data = s.nextLine();
+            }
+            String[] res = data.split("\t");
+            return Integer.valueOf(res[1])+1;
+        }
+        else return 1;
+    }
 
     public void submit(ActionEvent event) throws FileNotFoundException, ParseException {
         String dateN = DateNaissance.getValue().toString();
         String data="";
         //il faut penser a utiliser une autre methode d ecriture dans le fichier qui support l ecriture dans plusieur files en meme temps afin d optimiser le programme
-        Patient p = new Patient(Integer.parseInt(this.IDPatient.getText()),this.Nom.getText(),this.Prenom.getText(),dateN,this.Sexe.getText(),this.CIN.getText());
+        Patient p = new Patient(NextID(),this.Nom.getText(),this.Prenom.getText(),dateN,this.Sexe.getText(),this.CIN.getText());
         File file1 = new File("src/main/java/com/example/test2/archive_patient.txt");
         try {
             Scanner s = new Scanner(file1);
@@ -74,11 +85,12 @@ public class ADDPatient {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void cancel(ActionEvent event) {
         final Node source = (Node) event.getSource();
         final Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
-
-
-
 }

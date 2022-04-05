@@ -9,8 +9,8 @@
     <TextField fx:id="Nom" layoutX="26.0" layoutY="52.0" promptText="Nom" />
     <TextField fx:id="CIN" layoutX="26.0" layoutY="101.0" promptText="CIN" />
     <TextField fx:id="Prenom" layoutX="188.0" layoutY="52.0" promptText="Prenom" />
-    <TextField fx:id="Sexe" layoutX="26.0" layoutY="147.0" promptText="Sexe" />
-    <TextField fx:id="IDPatient" layoutX="188.0" layoutY="101.0" promptText="ID" />
-    <DatePicker fx:id="DateNaissance" layoutX="187.0" layoutY="147.0" prefHeight="25.0" prefWidth="149.0" />
-    <Button id="add_patient" fx:id="submit" layoutX="107.0" layoutY="197.0" mnemonicParsing="false" onAction="#submit" prefHeight="39.0" prefWidth="149.0" text="ADD" />
+    <TextField fx:id="Sexe" layoutX="188.0" layoutY="101.0" promptText="Sexe" />
+    <DatePicker fx:id="DateNaissance" layoutX="26.0" layoutY="147.0" prefHeight="25.0" prefWidth="310.0" />
+   <Button layoutX="195.0" layoutY="199.0" mnemonicParsing="false" onAction="#cancel" prefHeight="39.0" prefWidth="142.0" text="Cancel" />
+    <Button id="add_patient" fx:id="submit" layoutX="26.0" layoutY="200.0" mnemonicParsing="false" onAction="#submit" prefHeight="39.0" prefWidth="149.0" text="ADD" />
 </AnchorPane>

@@ -6,6 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="cd32fcd9-1fa7-43f6-b945-712280323eb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/ADDPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/ADDPatient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test2/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test2/archive_patient.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test2/archive_patient.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test2/patient/12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/ADD_Patient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/ADD_Patient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/ADDPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/ADDPatient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/ADD_Patient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/ADD_Patient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Assistant_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Assistant_List.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +101,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649177247464</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1649189602006</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649189602006</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <created>1649189726456</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649189726456</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
