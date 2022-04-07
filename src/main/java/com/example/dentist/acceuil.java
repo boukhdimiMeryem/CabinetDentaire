@@ -18,7 +18,7 @@ public class acceuil {
     public void manip_patient(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Patient_List.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root,766,515);
+        scene = new Scene(root,1024,700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Patient");
@@ -28,10 +28,16 @@ public class acceuil {
     public void manip_assistant(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Assistant_List.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root,766,515);
+        scene = new Scene(root,1024,700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Patient");
         stage.show();
+    }
+
+    public void close(ActionEvent event) {
+        final Node source = (Node) event.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 }

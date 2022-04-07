@@ -46,27 +46,30 @@ public class AssistantList {
         stage.show();
     }
 
-    public void refresh(ActionEvent event) {
-    }
-
-    public void add_Patient(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Patient_List.fxml"));
+    public void Overview(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("acceuil.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 766, 515);
+        Scene scene = new Scene(root, 1024, 700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setResizable(false);
-        stage.setTitle("ajouter un patient");
+        stage.setTitle("Acceuil");
         stage.setScene(scene);
         stage.show();
     }
 
-    public void switch_acceuil(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("acceuil.fxml"));
+    public void close(ActionEvent event) {
+        final Node source = (Node) event.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+
+    public void manip_patient(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Patient_List.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 766, 515);
+        Scene scene = new Scene(root, 1024, 700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setResizable(false);
-        stage.setTitle("Acceuil");
+        stage.setTitle("ajouter un patient");
         stage.setScene(scene);
         stage.show();
     }

@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,85 +12,144 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="515.0" prefWidth="766.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentist.AssistantList">
+<AnchorPane prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentist.AssistantList">
     <children>
-        <VBox id="vbarr" prefHeight="400.0" prefWidth="101.0" styleClass="sidepane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox id="vbarr" prefHeight="605.0" prefWidth="233.0" styleClass="sidepane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Pane prefHeight="188.0" prefWidth="101.0">
+                <Pane prefHeight="225.0" prefWidth="233.0">
                     <children>
-                        <ImageView fitHeight="74.0" fitWidth="116.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                        <Label layoutX="51.0" layoutY="28.0" prefHeight="46.0" prefWidth="168.0" text="MyDoctor" textFill="WHITE">
+                            <font>
+                                <Font size="38.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="54.0" fitWidth="45.0" layoutX="6.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@uploads/logo.png" />
+                                <Image url="@uploads/tooth_cracked_40px.png" />
                             </image>
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane>
+                <Pane layoutX="169.0" layoutY="188.0" prefHeight="45.0">
                     <children>
-                        <Button id="btn_option" fx:id="switch_acceuil" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#switch_acceuil" prefHeight="39.0" prefWidth="101.0" />
-                        <ImageView fitHeight="25.0" fitWidth="112.0" layoutX="38.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                        <Button id="btn_option" layoutY="-1.0" mnemonicParsing="false" onAction="#Overview" prefHeight="45.0" prefWidth="233.0" text="Overview" textFill="WHITE" />
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="24.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@uploads/home.png" />
                             </image>
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane />
-                <Pane />
-                <Pane />
-                <Pane>
+                <Pane layoutX="250.0" layoutY="220.0" prefHeight="45.0" prefWidth="40.0">
                     <children>
-                        <Button id="btn_option" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="39.0" prefWidth="101.0" />
-                        <ImageView fitHeight="25.0" fitWidth="101.0" layoutX="38.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                        <Button id="btn_option" fx:id="add_Assistant" layoutY="-1.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="233.0" text="Ajouter un Assistant" textFill="WHITE" />
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="27.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@uploads/add.png" />
                             </image>
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane>
+                <Pane layoutX="330.0" layoutY="282.0" prefHeight="45.0" prefWidth="233.0">
                     <children>
-                        <Button id="btn_option" fx:id="add_Patient" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#add_Patient" prefHeight="39.0" prefWidth="101.0" />
-                        <ImageView fitHeight="25.0" fitWidth="36.0" layoutX="38.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                        <Button id="btn_option" fx:id="manip_patient" layoutY="-1.0" mnemonicParsing="false" onAction="#manip_patient" prefHeight="45.0" prefWidth="233.0" text="Ajouter un Patient" textFill="WHITE" />
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@uploads/bed.png" />
                             </image>
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane prefHeight="36.0" prefWidth="101.0">
+                <Pane layoutX="336.0" layoutY="393.0" prefHeight="45.0">
                     <children>
-                        <Button id="btn_option" contentDisplay="GRAPHIC_ONLY" layoutY="-1.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="101.0" />
-                        <ImageView fitHeight="25.0" fitWidth="36.0" layoutX="38.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                        <Button id="btn_option" fx:id="manip_patient2" mnemonicParsing="false" onAction="#manip_patient" prefHeight="45.0" prefWidth="233.0" text="Settings" textFill="WHITE" />
+                        <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@uploads/settings.png" />
                             </image>
                         </ImageView>
                     </children>
                 </Pane>
-                <Pane prefHeight="174.0" prefWidth="102.0">
+                <Pane prefHeight="299.0" prefWidth="233.0">
                     <children>
-                        <Button id="logout" fx:id="logout" layoutY="149.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="LOGOUT" />
+                        <Button fx:id="btn_logout" layoutY="261.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="233.0" text="Logout" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="31.0" fitWidth="31.0" layoutX="42.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@uploads/Logout_24px.png" />
+                            </image>
+                        </ImageView>
                     </children>
                 </Pane>
             </children>
         </VBox>
-        <TableView fx:id="table" layoutX="122.0" layoutY="134.0" prefHeight="278.0" prefWidth="606.0">
+        <AnchorPane layoutX="233.0" prefHeight="102.0" prefWidth="793.0" style="-fx-background-color: #acafb2;">
+            <children>
+                <Button fx:id="close" layoutX="754.0" layoutY="-1.0" mnemonicParsing="false" onAction="#close" prefHeight="23.0" prefWidth="23.0" style="-fx-background-radius: 0;">
+                    <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@uploads/Close.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="zoom" layoutX="715.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="39.0" style="-fx-background-radius: 0;">
+                    <graphic>
+                        <ImageView fitHeight="19.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@uploads/resize_80px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <TextField layoutX="56.0" layoutY="32.0" prefHeight="45.0" prefWidth="298.0" promptText="search">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </TextField>
+                <Button layoutX="354.0" layoutY="31.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 3; -fx-background-color: none;">
+                    <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@uploads/search_24px.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Label layoutX="600.0" layoutY="30.0" prefHeight="28.0" prefWidth="64.0" text="Dr.Test">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="39.0" fitWidth="39.0" layoutX="664.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@uploads/profil.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="624.0" layoutY="55.0" text="admin" textFill="WHITESMOKE" />
+            </children>
+        </AnchorPane>
+        <TableView fx:id="table" layoutX="315.0" layoutY="220.0" prefHeight="404.0" prefWidth="692.0">
             <columns>
-                <TableColumn fx:id="IDP" prefWidth="94.0" text="ID" />
-                <TableColumn fx:id="NOMP" prefWidth="106.0" text="NOM" />
-                <TableColumn fx:id="PRENOMP" prefWidth="119.0" text="PRENOM" />
-                <TableColumn fx:id="DATENP" prefWidth="120.0" text="Date de Naissance" />
-                <TableColumn fx:id="SEXE" minWidth="0.0" prefWidth="76.0" text="Sexe" />
-                <TableColumn fx:id="CIN" prefWidth="90.0" text="CIN" />
+                <TableColumn fx:id="IDP" prefWidth="85.0" text="ID" />
+                <TableColumn fx:id="NOMP" prefWidth="147.0" text="NOM" />
+                <TableColumn fx:id="PRENOMP" prefWidth="148.0" text="PRENOM" />
+                <TableColumn fx:id="DATENP" prefWidth="176.0" text="Date de Naissance" />
+                <TableColumn fx:id="SEXE" minWidth="0.0" prefWidth="54.0" text="Sexe" />
+                <TableColumn fx:id="CIN" minWidth="0.0" text="CIN" />
+                <TableColumn fx:id="action" minWidth="0.0" prefWidth="0.0" />
             </columns>
         </TableView>
-        <Label alignment="CENTER" layoutX="241.0" layoutY="47.0" prefHeight="59.0" prefWidth="368.0" style="-fx-font-weight: bolder;" text="List des Assistants" textAlignment="CENTER">
+        <Label alignment="CENTER" layoutX="472.0" layoutY="126.0" prefHeight="59.0" prefWidth="422.0" style="-fx-font-weight: bolder;" text="Liste des assistants" textAlignment="CENTER">
             <font>
                 <Font size="41.0" />
             </font>
         </Label>
-        <Button fx:id="switch_add_Assistant" layoutX="602.0" layoutY="462.0" mnemonicParsing="false" onAction="#switch_add_Assistant" prefHeight="25.0" prefWidth="101.0" text="ADD" />
-        <Button fx:id="refresh" layoutX="478.0" layoutY="462.0" mnemonicParsing="false" onAction="#refresh" prefHeight="25.0" prefWidth="101.0" text="refresh" />
+        <Button layoutX="859.0" layoutY="635.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="148.0" text="ADD" />
+        <Button layoutX="700.0" layoutY="636.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="148.0" text="refresh" />
     </children>
 </AnchorPane>

@@ -3,9 +3,14 @@ package com.example.dentist;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.nio.file.Paths;
@@ -20,11 +25,10 @@ public class Patient {
     private String Sexe;
     private String CIN;
     private String DateNaissance;
-    private Button button;
+    private Button btn_enter;
     //il faut trouver une solution pour que DateNaissance soit de type Date
-    //il faut faire en sorte que l'ID du patient s'auto incremente
 
-    public void removeField(String fichier, int ID) throws IOException {
+    /*public void removeField(String fichier, int ID) throws IOException {
         File file = new File(fichier);
         if(!file.exists()) System.out.println("File don't exist");
         else
@@ -44,7 +48,7 @@ public class Patient {
             bw.close();
             f.close();
         }
-    }
+    }*/
 
     public Patient(int IDPatient,String Nom,String Prenom,String DateNaissance,String Sexe,String CIN){
         this.IDPatient=IDPatient;
@@ -53,13 +57,31 @@ public class Patient {
         this.Sexe=Sexe;
         this.CIN=CIN;
         this.DateNaissance=DateNaissance;
-        this.button= new Button("delete");
-        button.setOnAction(new EventHandler<ActionEvent>() {
+        this.btn_enter = new Button("enter");
+
+
+        EventHandler<ActionEvent> event;
+        btn_enter.setOnAction(event = new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
+                File file = new File("src/main/java/com/example/test2/BufferData.txt");
                 try {
-                    removeField("src/main/java/com/example/test2/archive_patient.txt",IDPatient);
-                    File file = new File("src/main/java/com/example/test2/patient/"+IDPatient+".txt");
-                    file.delete();//il fonctionne pas ,il faut trouver une autre alternatif(cette ligne)
+                    FileWriter f = new FileWriter(file);
+                    BufferedWriter bw = new BufferedWriter(f);
+                    String Id = String.valueOf(IDPatient);
+                    bw.write(Id);
+                    bw.close();
+                    f.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+                try {
+                    Parent root = FXMLLoader.load(getClass().getResource("Profil_Patient.fxml"));
+                    Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                    Scene scene = new Scene(root, 1024, 700);
+                    scene.getStylesheets().add(getClass().getResource("Style.css").toExternalForm());
+                    stage.setScene(scene);
+                    stage.setResizable(false);
+                    stage.show();
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
@@ -119,14 +141,12 @@ public class Patient {
         DateNaissance = DateNaissance;
     }
 
-    public Button getButton() {
-        return button;
+
+    public Button getBtn_enter() {
+        return btn_enter;
     }
 
-    public void setButton(Button button) {
-        this.button = button;
+    public void setBtn_enter(Button btn_enter) {
+        this.btn_enter = btn_enter;
     }
-
-
-
 }

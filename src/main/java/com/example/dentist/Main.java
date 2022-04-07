@@ -12,9 +12,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader root = new FXMLLoader(Main.class.getResource("authentification.fxml"));
-        Scene scene = new Scene(root.load(), 766, 515);
+        Scene scene = new Scene(root.load(), 1024, 700);
         stage.setTitle("Dental Application");
         stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
         scene.getStylesheets().add(getClass().getResource("Style.css").toExternalForm());
         stage.setResizable(false);
         stage.show();

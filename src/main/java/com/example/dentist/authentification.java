@@ -11,6 +11,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -73,7 +74,7 @@ public class authentification{
                             test=1;
                             root = FXMLLoader.load(getClass().getResource("acceuil.fxml"));
                             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                            scene = new Scene(root, 766, 515);
+                            scene = new Scene(root, 1024, 700);
                             scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
                             stage.setScene(scene);
                             stage.show();
@@ -89,4 +90,9 @@ public class authentification{
 
     }
 
+    public void close(ActionEvent event) {
+        final Node source = (Node) event.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
 }

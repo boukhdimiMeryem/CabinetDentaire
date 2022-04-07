@@ -96,7 +96,7 @@ public class PatientList implements Initializable {
         DATENP.setCellValueFactory(new PropertyValueFactory<Patient, LocalDate>("DateNaissance"));
         SEXE.setCellValueFactory(new PropertyValueFactory<Patient, String>("Sexe"));
         CIN.setCellValueFactory(new PropertyValueFactory<Patient, String>("CIN"));
-        action.setCellValueFactory(new PropertyValueFactory<Patient, Button>("button"));
+        action.setCellValueFactory(new PropertyValueFactory<Patient, Button>("btn_enter"));
 
 
 
@@ -155,27 +155,31 @@ public class PatientList implements Initializable {
 
         refresh_table();
     }
-
-
-    public void add_Assistant(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Assistant_List.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root, 766, 515);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.setResizable(false);
-        stage.setTitle("ajouter un Assistant");
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    public void switch_acceuil(ActionEvent event) throws IOException {
+    public void overview(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("acceuil.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 766, 515);
+        Scene scene = new Scene(root, 1024, 700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setResizable(false);
         stage.setTitle("Acceuil");
         stage.setScene(scene);
         stage.show();
     }
+
+    public void manip_assistant(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Assistant_List.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root, 1024, 700);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setResizable(false);
+        stage.setTitle("ajouter un Assistant");
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void close(ActionEvent event) {
+        final Node source = (Node) event.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+
 }
