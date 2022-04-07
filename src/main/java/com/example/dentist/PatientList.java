@@ -176,6 +176,15 @@ public class PatientList implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    public void logout(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("authentification.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root,1024,700);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("Patient");
+        stage.show();
+    }
     public void close(ActionEvent event) {
         final Node source = (Node) event.getSource();
         final Stage stage = (Stage) source.getScene().getWindow();

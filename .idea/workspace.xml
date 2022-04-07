@@ -4,37 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd32fcd9-1fa7-43f6-b945-712280323eb4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/ProfilPatient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/test2/BufferData.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Profil_Patient.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/uploads/teeth.png" afterDir="false" />
+    <list default="true" id="cd32fcd9-1fa7-43f6-b945-712280323eb4" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/ADDActeMed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/ADD_ActeMed.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/AssistantList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/AssistantList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/ProfilPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/ProfilPatient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/acceuil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/acceuil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/authentification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/authentification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test2/BufferData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test2/BufferData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test2/archive_patient.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test2/archive_patient.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Assistant_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Assistant_List.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Patient_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Patient_List.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Profil_Patient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Profil_Patient.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/acceuil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/authentification.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/authentification.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/uploads/add.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/uploads/add.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/uploads/bed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/uploads/bed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/uploads/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/uploads/home.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/uploads/settings.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/uploads/settings.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/AssistantList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/AssistantList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Assistant_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Assistant_List.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient_List.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/ProfilPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/ProfilPatient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Profil_Patient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Profil_Patient.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/acceuil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/acceuil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/acceuil.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/acceuil.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/authentification.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/uploads/add.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/uploads/add.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/uploads/bed.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/uploads/bed.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/uploads/home.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/uploads/home.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/uploads/settings.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/uploads/settings.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649195775495</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update">
+      <created>1649298197537</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1649298197537</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

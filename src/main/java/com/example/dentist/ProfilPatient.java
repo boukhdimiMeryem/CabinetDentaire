@@ -123,4 +123,23 @@ public class ProfilPatient implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    public void logout(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("authentification.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root,1024,700);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("Patient");
+        stage.show();
+    }
+
+    public void ADD_ActMed(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ADD_ActeMed.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(root,468,458);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("Patient");
+        stage.show();
+    }
 }

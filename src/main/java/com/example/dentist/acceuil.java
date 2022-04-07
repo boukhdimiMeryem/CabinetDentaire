@@ -40,4 +40,14 @@ public class acceuil {
         final Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
+
+    public void logout(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("authentification.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root,1024,700);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("Patient");
+        stage.show();
+    }
 }
