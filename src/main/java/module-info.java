@@ -3,6 +3,6 @@ module com.example.dentist {
     requires javafx.fxml;
 
 
-    opens com.example.dentist to javafx.fxml;
-    exports com.example.dentist;
+    opens cabinet.dentist to javafx.fxml;
+    exports cabinet.dentist;
 }
