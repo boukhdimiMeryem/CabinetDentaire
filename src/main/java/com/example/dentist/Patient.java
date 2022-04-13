@@ -75,7 +75,7 @@ public class Patient {
                     ex.printStackTrace();
                 }
                 try {
-                    Parent root = FXMLLoader.load(getClass().getResource("Profil_Patient.fxml"));
+                    Parent root = FXMLLoader.load(getClass().getResource("ActeMed.fxml"));
                     Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root, 1024, 700);
                     scene.getStylesheets().add(getClass().getResource("Style.css").toExternalForm());

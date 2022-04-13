@@ -5,10 +5,12 @@ public class CouvertureMedicale {
     private String TypeCouverture;
 
     public int getID() {
+
         return IDCouverture;
     }
 
     public void setID(int IDCouverture) {
+
         this.IDCouverture = IDCouverture;
     }
 

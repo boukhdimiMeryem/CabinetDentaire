@@ -147,7 +147,6 @@ public class PatientList implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         refresh_table();
     }
 
@@ -161,7 +160,6 @@ public class PatientList implements Initializable {
         Scene scene = new Scene(root, 1024, 700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setResizable(false);
-        stage.setTitle("Acceuil");
         stage.setScene(scene);
         stage.show();
     }
@@ -172,7 +170,6 @@ public class PatientList implements Initializable {
         scene = new Scene(root, 1024, 700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setResizable(false);
-        stage.setTitle("ajouter un Assistant");
         stage.setScene(scene);
         stage.show();
     }
@@ -182,7 +179,6 @@ public class PatientList implements Initializable {
         scene = new Scene(root,1024,700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
-        stage.setTitle("Patient");
         stage.show();
     }
     public void close(ActionEvent event) {

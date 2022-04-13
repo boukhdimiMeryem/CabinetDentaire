@@ -2,7 +2,10 @@ package com.example.dentist;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -27,7 +30,7 @@ public class ADDPatient {
     @FXML
     private DatePicker DateNaissance;
 
-    @FXML
+
     public int NextID() throws FileNotFoundException {
         File file = new File("src/main/java/com/example/test2/archive_patient.txt");
         Scanner s = new Scanner(file);
@@ -88,9 +91,9 @@ public class ADDPatient {
     }
 
 
-    public void cancel(ActionEvent event) {
+    public void cancel(ActionEvent event) throws IOException {
         final Node source = (Node) event.getSource();
-        final Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
+        final Stage stagee = (Stage) source.getScene().getWindow();
+        stagee.close();
     }
 }

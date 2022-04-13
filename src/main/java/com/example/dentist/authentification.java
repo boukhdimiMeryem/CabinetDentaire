@@ -39,6 +39,15 @@ public class authentification{
 
 
 
+    public void switchh(ActionEvent event,String file, int width , int heigth , boolean isNewStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(file));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root, width, heigth);
+        scene.getStylesheets().add(getClass().getResource("Style.css").toExternalForm());
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
+    }
     @FXML
     void login(ActionEvent event) throws IOException {
         String adress = tfadress.getText();
@@ -52,32 +61,13 @@ public class authentification{
                 Scanner s = new Scanner(file);
                 while (s.hasNextLine()) {
                     String auth_data = s.nextLine();
-                    char[] auth = auth_data.toCharArray();
-                    String ad = "";
-                    String pw = "";
-                    String status = "";
-                    byte i = 0;
-                    while (auth[i] != '\t') {
-                        ad += String.valueOf(auth[i]);
-                        i++;
-                    }
-                    byte j = (byte) (i + 1);
-                    while (auth[j] != '\t') {
-                        pw += auth[j];
-                        j++;
-                    }
-                    for (byte k = (byte) (j + 1); k < auth.length; k++) {
-                        status += auth[k];
-                    }
-                    if (adress.equals(ad)) {
-                        if (password.equals(pw)) {
+                    String[] testt=auth_data.split("\t");
+                    if (adress.equals(testt[0])) {
+                        if (password.equals(testt[1])) {
                             test=1;
-                            root = FXMLLoader.load(getClass().getResource("acceuil.fxml"));
-                            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                            scene = new Scene(root, 1024, 700);
-                            scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-                            stage.setScene(scene);
-                            stage.show();
+                            if(testt[2].equals("AD")) switchh(event,"acceuil.fxml",1024,700,false);
+                            else switchh(event,"RDV_List.fxml",1024,700,false);
+                            break;
                         }
                     }
                 }
@@ -85,7 +75,7 @@ public class authentification{
                 e.printStackTrace();
             }
         }
-        if(test==0) System.out.print("test2");
+        if(test==0) System.out.print("account not found");
 
 
     }

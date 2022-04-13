@@ -1,6 +1,4 @@
 package com.example.dentist;
 
-
-public class ADDActeMed {
-
+public class AcceuilAss {
 }

@@ -149,7 +149,7 @@
                 <Font size="41.0" />
             </font>
         </Label>
-        <Button layoutX="859.0" layoutY="635.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="148.0" text="ADD" />
+        <Button layoutX="859.0" layoutY="635.0" mnemonicParsing="false" onAction="#switch_add_Assistant" prefHeight="36.0" prefWidth="148.0" text="ADD" />
         <Button layoutX="700.0" layoutY="636.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="148.0" text="refresh" />
     </children>
 </AnchorPane>

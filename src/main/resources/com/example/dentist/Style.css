@@ -14,7 +14,6 @@
 -fx-background-color:"black";
 }
 #close:hover,#zoom:hover{
-/*-fx-background-color:"#fff";*/
 -fx-opacity:0.8;
 }
 #logout{
@@ -26,4 +25,10 @@
 }
 #test{
 -fx-background-color:"#77b5fe";
+}
+#btn_month_1{
+-fx-background-color:"#F7F5F7";
+}
+#btn_month_2{
+-fx-background-color:"#bfbbbf";
 }

@@ -33,53 +33,42 @@ public class AssistantList {
 
     private Parent root;
 
+    public void switchh(ActionEvent event,String file, int width , int heigth , boolean isNewStage) throws IOException {
+        root = FXMLLoader.load(getClass().getResource(file));
+        Stage stage;
+        if(isNewStage==true) stage = new Stage();
+        else stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root, width, heigth);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
     @FXML
     public void switch_add_Assistant(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("ADD_Patient.fxml"));
-        Stage stage = new Stage();
-        Scene scene = new Scene(root, 362, 267);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setResizable(false);
-        stage.setTitle("ajouter un Assistant");
-        stage.setScene(scene);
-        stage.show();
+        switchh(event,"ADD_Patient.fxml",362,267,true);
     }
-
+    @FXML
     public void Overview(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("acceuil.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 1024, 700);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.setResizable(false);
-        stage.setTitle("Acceuil");
-        stage.setScene(scene);
-        stage.show();
+        switchh(event,"acceuil.fxml",1024,700,false);
+    }
+    @FXML
+    public void manip_patient(ActionEvent event) throws IOException {
+        switchh(event,"Patient_List.fxml",1024,700,false);
+    }
+    @FXML
+    public void logout(ActionEvent event) throws IOException {
+        switchh(event,"authentification.fxml",1024,700,false);
     }
 
+    @FXML
     public void close(ActionEvent event) {
         final Node source = (Node) event.getSource();
         final Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
 
-    public void manip_patient(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Patient_List.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 1024, 700);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.setResizable(false);
-        stage.setTitle("ajouter un patient");
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void logout(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("authentification.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 1024, 700);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.setScene(scene);
-        stage.setTitle("Patient");
-        stage.show();
-    }
+
 }

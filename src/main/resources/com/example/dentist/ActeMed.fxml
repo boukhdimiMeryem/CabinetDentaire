@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentist.ProfilPatient">
+<AnchorPane prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentist.ActeMed">
     <children>
         <VBox id="vbarr" prefHeight="605.0" prefWidth="233.0" styleClass="sidepane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -133,41 +133,47 @@
                 <Label layoutX="624.0" layoutY="55.0" text="admin" textFill="WHITESMOKE" />
             </children>
         </AnchorPane>
-      <Label fx:id="Num_Patient" layoutX="572.0" layoutY="115.0" prefHeight="46.0" prefWidth="220.0" text="num">
+      <Label layoutX="472.0" layoutY="120.0" text="Historique des Actes Medicaux">
+         <font>
+            <Font name="System Bold Italic" size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="Num_Patient" layoutX="271.0" layoutY="166.0" prefHeight="46.0" prefWidth="220.0" text="num">
          <font>
             <Font size="31.0" />
          </font>
       </Label>
-      <Label fx:id="display_nom" layoutX="315.0" layoutY="184.0" prefHeight="26.0" prefWidth="116.0" text="nom">
+      <Label fx:id="display_nom" layoutX="271.0" layoutY="237.0" prefHeight="26.0" prefWidth="116.0" text="nom">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="display_prenom" layoutX="462.0" layoutY="184.0" prefHeight="26.0" prefWidth="160.0" text="prenom">
+      <Label fx:id="display_prenom" layoutX="422.0" layoutY="237.0" prefHeight="26.0" prefWidth="160.0" text="prenom">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="display_dateN" layoutX="627.0" layoutY="184.0" prefHeight="26.0" prefWidth="262.0" text="date de naissance">
+      <Label fx:id="display_dateN" layoutX="602.0" layoutY="234.0" prefHeight="26.0" prefWidth="262.0" text="date de naissance">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label fx:id="display_cin" layoutX="892.0" layoutY="184.0" prefHeight="26.0" prefWidth="116.0" text="CIN">
+      <Label fx:id="display_cin" layoutX="892.0" layoutY="234.0" prefHeight="26.0" prefWidth="116.0" text="CIN">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-        <TableView fx:id="table" layoutX="315.0" layoutY="220.0" prefHeight="404.0" prefWidth="692.0">
-            <columns>
-                <TableColumn fx:id="IDP" prefWidth="170.0" text="Acte Medical" />
-                <TableColumn fx:id="NOMP" prefWidth="204.0" text="Prochain RDV" />
-                <TableColumn fx:id="PRENOMP" prefWidth="165.0" text="Radio" />
-                <TableColumn fx:id="DATENP" prefWidth="151.0" text="Status" />
-            </columns>
-        </TableView>
-        <Button layoutX="859.0" layoutY="646.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="148.0" text="Enregistrer" />
-        <Button layoutX="700.0" layoutY="647.0" mnemonicParsing="false" onAction="#ADD_ActMed" prefHeight="36.0" prefWidth="148.0" text="Ajouter un acte médical" />
+      <TableView fx:id="table" layoutX="271.0" layoutY="287.0" prefHeight="329.0" prefWidth="738.0">
+         <columns>
+            <TableColumn fx:id="ID" prefWidth="56.0" text="ID" />
+            <TableColumn fx:id="DebutSoin" prefWidth="178.0" text="Debut Soin" />
+            <TableColumn fx:id="FinSoin" prefWidth="180.0" text="Fin Soin" />
+            <TableColumn fx:id="EtatActe" prefWidth="69.0" text="Etat acte" />
+            <TableColumn fx:id="PrixC" minWidth="0.0" prefWidth="157.0" text="Prix Comptabilisé" />
+            <TableColumn fx:id="Action" minWidth="0.0" prefWidth="97.0" text="Action" />
+         </columns>
+      </TableView>
+      <Button layoutX="832.0" layoutY="628.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="177.0" text="Ajouter un acte" />
     </children>
 
 </AnchorPane>
