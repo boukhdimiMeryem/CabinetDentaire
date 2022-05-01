@@ -1,15 +1,15 @@
 package cabinet.dentist;
 
 public class TypeRadio {
-    private int IDTypeRadio;
+    private String IDTypeRadio;
     private String Description;
 
-    public TypeRadio (int IDTypeRadio, String Description){
+    public TypeRadio (String IDTypeRadio, String Description){
         this.IDTypeRadio = IDTypeRadio;
         this.Description = Description;
     }
 
-    public int getIDTypeRadio(){
+    public String getIDTypeRadio(){
         return IDTypeRadio;
     }
 
