@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cd32fcd9-1fa7-43f6-b945-712280323eb4" name="Changes" comment="update">
+    <list default="true" id="cd32fcd9-1fa7-43f6-b945-712280323eb4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/ADDPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/ADDPatient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/AcceuilAss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/AcceuilAss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/AcceuilAss.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/AcceuilAss.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dentist/PatientList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/test2/archive_patient.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/test2/archive_patient.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Patient_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dentist/Patient_List.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/ADDPatient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/ADDPatient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/PatientList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient_List.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/dentist/Patient_List.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +28,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -155,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649862460164</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update">
+      <created>1651857004115</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651857004115</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -9,17 +9,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.converter.LocalDateTimeStringConverter;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -68,6 +64,48 @@ public class PatientList implements Initializable {
     @FXML
     private Button switch_add_patient;
 
+    @FXML
+    private Button btnCancel;
+
+    @FXML
+    private Button btnDelete;
+
+    @FXML
+    private Button btnInsert;
+
+    @FXML
+    private Button btnUpdate;
+
+    @FXML
+    private Button btn_logout;
+
+    @FXML
+    private Button close;
+
+    @FXML
+    private Button manip_patient2;
+
+    @FXML
+    private TextField tfCIN;
+
+    @FXML
+    private DatePicker tfDATE;
+
+    @FXML
+    private TextField tfID;
+
+    @FXML
+    private TextField tfNOM;
+
+    @FXML
+    private TextField tfPRENOM;
+
+    @FXML
+    private TextField tfSexe;
+
+    @FXML
+    private Button zoom;
+
     private Parent root;
     private Stage stage;
     private Scene scene;
@@ -76,18 +114,8 @@ public class PatientList implements Initializable {
 
     }
 
-    @FXML
-    public void switch_add_patient(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("ADD_Patient.fxml"));
-        stage = new Stage();
-        scene = new Scene(root, 362, 267);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setResizable(false);
-        stage.setTitle("ajouter un patient");
-        stage.setScene(scene);
-        stage.show();
-    }
+
+
 
     public void refresh_table(){
         IDP.setCellValueFactory(new PropertyValueFactory<Patient, Integer>("IDPatient"));
@@ -97,9 +125,6 @@ public class PatientList implements Initializable {
         SEXE.setCellValueFactory(new PropertyValueFactory<Patient, String>("Sexe"));
         CIN.setCellValueFactory(new PropertyValueFactory<Patient, String>("CIN"));
         action.setCellValueFactory(new PropertyValueFactory<Patient, Button>("btn_enter"));
-
-
-
         String data = "";
         String fichier = "";
         byte m=0;
@@ -150,10 +175,9 @@ public class PatientList implements Initializable {
         refresh_table();
     }
 
-    public void refresh(ActionEvent event) {
-
+    /*public void refresh(ActionEvent event) {
         refresh_table();
-    }
+    }*/
     public void overview(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("acceuil.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -186,5 +210,75 @@ public class PatientList implements Initializable {
         final Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
+    public int NextID() throws FileNotFoundException {
+        File file = new File("src/main/java/com/example/test2/archive_patient.txt");
+        Scanner s = new Scanner(file);
+        String data="";
+        if(s.hasNextLine()) {
+            while (s.hasNextLine()) {
+                data = s.nextLine();
+            }
+            String[] res = data.split("\t");
+            return Integer.valueOf(res[1])+1;
+        }
+        else return 1;
+    }
 
+    public void insert(ActionEvent event) throws FileNotFoundException, ParseException {
+        String dateN = tfDATE.getValue().toString();
+        String data="";
+        //il faut penser a utiliser une autre methode d ecriture dans le fichier qui support l ecriture dans plusieur files en meme temps afin d optimiser le programme
+        Patient p = new Patient(NextID(),this.tfNOM.getText(),this.tfPRENOM.getText(),dateN,this.tfSexe.getText(),this.CIN.getText());
+        File file1 = new File("src/main/java/com/example/test2/archive_patient.txt");
+        try {
+            Scanner s = new Scanner(file1);
+            if(s.hasNextLine())
+            {
+                while (s.hasNextLine()) {
+                    data += s.nextLine()+"\n";
+                }
+                data+=p.getNom() + "\t" + p.getIDPatient();
+            }
+            else data = p.getNom()+"\t"+p.getIDPatient();
+            FileWriter f = new FileWriter(file1);
+            BufferedWriter bw = new BufferedWriter(f);
+            bw.write(data);
+            bw.close();
+            f.close();
+            refresh_table();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String fichier = p.getIDPatient()+".txt";
+        File file2 = new File("src/main/java/com/example/test2/patient/"+fichier);
+        if(!file2.exists()){
+            try{
+                file2.createNewFile();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        }
+        try {
+            FileWriter f2 = new FileWriter(file2);
+            BufferedWriter bw = new BufferedWriter(f2);
+            String input= p.getIDPatient()+"\t"+p.getNom()+"\t"+p.getPrenom()+"\t"+p.getDateNaissance()+"\t"+p.getSexe()+"\t"+p.getCIN();
+            bw.write(input);
+            bw.close();
+            f2.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void manip_patient(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("ADD_Patient.fxml"));
+        stage = new Stage();
+        scene = new Scene(root, 362, 267);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setResizable(false);
+        stage.setTitle("ajouter un patient");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
