@@ -8,3 +8,6 @@ lkd,lkad,	8
 lkd,lkad,	9
 lkd,lkad,	10
 lkd,lkad,	11
+nlknk	12
+nlknk	13
+nlknk	14
