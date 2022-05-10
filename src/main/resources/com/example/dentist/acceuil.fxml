@@ -60,7 +60,7 @@
             </Pane>
             <Pane layoutX="336.0" layoutY="393.0" prefHeight="45.0">
                <children>
-                  <Button id="btn_option" fx:id="manip_patient2" mnemonicParsing="false" onAction="#manip_patient" prefHeight="45.0" prefWidth="233.0" text="Settings" textFill="WHITE" />
+                  <Button id="btn_option" fx:id="manip_patient2" mnemonicParsing="false" onAction="#goToSettings" prefHeight="45.0" prefWidth="233.0" text="Settings" textFill="WHITE" />
                   <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@uploads/settings.png" />

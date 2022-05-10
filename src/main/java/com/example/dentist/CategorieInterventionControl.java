@@ -23,22 +23,20 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class TypeRadioController implements Initializable{
+public class CategorieInterventionControl implements Initializable{
+
     private Stage stage;
     private Scene scene;
     private Parent root;
 
     @FXML
-    private TableColumn<TypeRadio, String> DescCol;
+    private TableColumn<CategorieIntervention, Integer> IDCatInCol;
 
     @FXML
-    private TextField Description;
+    private TextField IdCatIntervention;
 
     @FXML
-    private TableColumn<TypeRadio, Integer> IDTRCol;
-
-    @FXML
-    private TextField IDTypeR;
+    private TableColumn<CategorieIntervention, Double> PrixBCol;
 
     @FXML
     private Button btn_logout;
@@ -50,22 +48,30 @@ public class TypeRadioController implements Initializable{
     private Button manip_patient2;
 
     @FXML
-    private TableColumn<TypeRadio, String> nomTypeCol;
+    private TableColumn<CategorieIntervention, String> nomTypeIntCol;
 
     @FXML
-    private TextField nomTypeR;
+    private TextField prixBase;
 
     @FXML
-    private TableView<TypeRadio> tableView;
+    private TableView<CategorieIntervention> tableView;
+
+    @FXML
+    private TextField typeIntervention;
 
     @FXML
     private Button zoom;
 
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        IDCatInCol.setCellValueFactory(new PropertyValueFactory<CategorieIntervention, Integer>("IDcategorie"));
+        nomTypeIntCol.setCellValueFactory(new PropertyValueFactory<CategorieIntervention, String>("Type"));
+        PrixBCol.setCellValueFactory(new PropertyValueFactory<CategorieIntervention, Double>("PrixBase"));
+    }
 
     @FXML
-    void afficher(ActionEvent event) throws FileNotFoundException{
-        File file = new File("src/main/java/com/example/test2/typeRadio");
+    void afficherCatInt(ActionEvent event) throws FileNotFoundException{
+        File file = new File("src/main/java/com/example/test2/categorie intervention");
         Scanner sc = new Scanner(file);
 
         String fileContent = "";
@@ -74,30 +80,22 @@ public class TypeRadioController implements Initializable{
             System.err.println(fileContent);
         }
         String[] list = fileContent.split("/");
-        ObservableList<com.example.dentist.TypeRadio> tableData = tableView.getItems();
+        ObservableList<CategorieIntervention> tableData = tableView.getItems();
         for (String s : list) {
             String[] listAtt = s.split(":");
-            com.example.dentist.TypeRadio typeRadio = new com.example.dentist.TypeRadio(Integer.parseInt(listAtt[0]), listAtt[1], listAtt[2]);
-            System.out.println(typeRadio.getIDTypeRadio() +" "+ typeRadio.getNomTypeRadio() +" "+ typeRadio.getDescription());
-            tableData.add(typeRadio);
+            CategorieIntervention cat = new CategorieIntervention(Integer.parseInt(listAtt[0]), listAtt[1], Double.parseDouble(listAtt[2]));
+            System.out.println(cat.getIDcategorie() +" "+ cat.getType() +" "+ cat.getPrixBase());
+            tableData.add(cat);
         }
         tableView.setItems(tableData);
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        IDTRCol.setCellValueFactory(new PropertyValueFactory<TypeRadio, Integer>("IDTypeRadio"));
-        DescCol.setCellValueFactory(new PropertyValueFactory<TypeRadio, String>("Description"));
-        nomTypeCol.setCellValueFactory(new PropertyValueFactory<TypeRadio, String>("NomTypeRadio"));
-    }
-
     @FXML
-    void ajouter(ActionEvent event) {
-        TypeRadio type = new TypeRadio(Integer.parseInt(IDTypeR.getText()), nomTypeR.getText(), Description.getText());
-        ObservableList<TypeRadio> typesR = tableView.getItems();
-        typesR.add(type);
-        tableView.setItems(typesR);
-        //tableView.getItems().add(type);
+    void ajouterCatInt(ActionEvent event) {
+        CategorieIntervention type = new CategorieIntervention(Integer.parseInt(IdCatIntervention.getText()), typeIntervention.getText(), Double.parseDouble(prixBase.getText()));
+        ObservableList<CategorieIntervention> typesi = tableView.getItems();
+        typesi.add(type);
+        tableView.setItems(typesi);
     }
 
     @FXML
@@ -125,6 +123,7 @@ public class TypeRadioController implements Initializable{
         scene = new Scene(root,1024,700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
+        stage.setTitle("Patient");
         stage.show();
     }
 
@@ -132,8 +131,68 @@ public class TypeRadioController implements Initializable{
     void manip_patient(ActionEvent event) throws IOException{
         root = FXMLLoader.load(getClass().getResource("Patient_List.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        scene = new Scene(root,1024,700);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setScene(scene);
+        stage.setTitle("Patient");
+        stage.show();
+    }
+
+    @FXML
+    void saveToFileCatInt(ActionEvent event) {
+        try {
+            String line;
+            File f = new File("src/main/java/com/example/test2/categorie intervention");
+            FileWriter fi = new FileWriter(f);
+            BufferedWriter writer = new BufferedWriter(fi);
+            for (CategorieIntervention p : tableView.getItems()) {
+                line = p.getIDcategorie() + ":" + p.getType() + ":" + p.getPrixBase() +"/";
+                writer.write(line);
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    void submitCatInt(ActionEvent event) {
+        ObservableList<CategorieIntervention> currentTableData = tableView.getItems();
+        int currentTypeId = Integer.parseInt(IdCatIntervention.getText());
+
+        for (CategorieIntervention type : currentTableData) {
+            if(type.getIDcategorie() == currentTypeId) {
+                type.setType(typeIntervention.getText());
+                type.setPrixBase(Double.parseDouble(prixBase.getText()));
+                tableView.setItems(currentTableData);
+                tableView.refresh();
+                break;
+            }
+        }
+    }
+
+    @FXML
+    void supprimerCatInt(ActionEvent event) {
+        int selectedID = tableView.getSelectionModel().getSelectedIndex();
+        tableView.getItems().remove(selectedID);
+    }
+
+    @FXML
+    void rowClicked(MouseEvent event) {
+        CategorieIntervention clickedType = tableView.getSelectionModel().getSelectedItem();
+        IdCatIntervention.setText(String.valueOf(clickedType.getIDcategorie()));
+        typeIntervention.setText(String.valueOf(clickedType.getType()));
+        prixBase.setText(String.valueOf(clickedType.getPrixBase()));
+    }
+
+    @FXML
+    public void goToSettings(ActionEvent event) throws  IOException {
+        root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root,1024,700);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("Patient");
         stage.show();
     }
 
@@ -147,63 +206,4 @@ public class TypeRadioController implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
-
-    @FXML
-    void saveToFile(ActionEvent event) {
-        try {
-            String line;
-            File f = new File("src/main/java/com/example/test2/typeRadio");
-            FileWriter fi = new FileWriter(f);
-            BufferedWriter writer = new BufferedWriter(fi);
-            for (TypeRadio p : tableView.getItems()) {
-                line = p.getIDTypeRadio() + ":" + p.getNomTypeRadio() + ":" + p.getDescription() +"/";
-                writer.write(line);
-            }
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    void submit(ActionEvent event) {
-        ObservableList<TypeRadio> currentTableData = tableView.getItems();
-        int currentTypeId = Integer.parseInt(IDTypeR.getText());
-
-        for (TypeRadio typeRadio : currentTableData) {
-            if(typeRadio.getIDTypeRadio() == currentTypeId) {
-                typeRadio.setDescription(Description.getText());
-                typeRadio.setNomTypeRadio(nomTypeR.getText());
-                tableView.setItems(currentTableData);
-                tableView.refresh();
-                break;
-            }
-        }
-    }
-
-    @FXML
-    void supprimer(ActionEvent event) {
-        int selectedID = tableView.getSelectionModel().getSelectedIndex();
-        tableView.getItems().remove(selectedID);
-    }
-
-    @FXML
-    void rowClicked(MouseEvent event) {
-        TypeRadio clickedType = tableView.getSelectionModel().getSelectedItem();
-        IDTypeR.setText(String.valueOf(clickedType.getIDTypeRadio()));
-        nomTypeR.setText(String.valueOf(clickedType.getNomTypeRadio()));
-        Description.setText(String.valueOf(clickedType.getDescription()));
-    }
-
-    @FXML
-    public void goToSettings(ActionEvent event) throws  IOException {
-        root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root,1024,700);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.setScene(scene);
-        stage.setTitle("Patient");
-        stage.show();
-    }
 }
-

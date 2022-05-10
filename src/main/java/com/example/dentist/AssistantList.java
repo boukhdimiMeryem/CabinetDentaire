@@ -17,6 +17,9 @@ import java.io.IOException;
 public class AssistantList {
 
 
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
     @FXML
     private Button add_pat_btn_option;
@@ -30,8 +33,6 @@ public class AssistantList {
     @FXML
     private Button switch_add_patient;
 
-
-    private Parent root;
 
     public void switchh(ActionEvent event,String file, int width , int heigth , boolean isNewStage) throws IOException {
         root = FXMLLoader.load(getClass().getResource(file));
@@ -70,5 +71,14 @@ public class AssistantList {
         stage.close();
     }
 
-
+    @FXML
+    public void goToSettings(ActionEvent event) throws  IOException {
+        root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root,1024,700);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("Patient");
+        stage.show();
+    }
 }

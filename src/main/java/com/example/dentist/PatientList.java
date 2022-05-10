@@ -32,6 +32,12 @@ import java.util.Scanner;
 
 
 public class PatientList implements Initializable {
+
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
     @FXML
     private TableView<Patient> table;
     @FXML
@@ -106,9 +112,6 @@ public class PatientList implements Initializable {
     @FXML
     private Button zoom;
 
-    private Parent root;
-    private Stage stage;
-    private Scene scene;
 
     public PatientList() throws ParseException {
 
@@ -279,6 +282,17 @@ public class PatientList implements Initializable {
         stage.setResizable(false);
         stage.setTitle("ajouter un patient");
         stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void goToSettings(ActionEvent event) throws  IOException {
+        root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root,1024,700);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("Patient");
         stage.show();
     }
 }

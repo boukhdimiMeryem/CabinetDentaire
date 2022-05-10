@@ -3,9 +3,9 @@ package com.example.dentist;
 public class CategorieIntervention {
     private int IDcategorie;
     private String Type;
-    private float PrixBase;
+    private double PrixBase;
 
-    public CategorieIntervention (int IDcategorie, String Type, float PrixBase ){
+    public CategorieIntervention (int IDcategorie, String Type, double PrixBase ){
         this.IDcategorie = IDcategorie;
         this.Type = Type;
         this.PrixBase = PrixBase;
@@ -27,11 +27,11 @@ public class CategorieIntervention {
         this.Type = Type;
     }
 
-    public float getPrixBase(){
+    public double getPrixBase(){
         return PrixBase;
     }
 
-    public void setPrixBase( float PrixBase){
+    public void setPrixBase( double PrixBase){
         this.PrixBase = PrixBase;
     }
 }
