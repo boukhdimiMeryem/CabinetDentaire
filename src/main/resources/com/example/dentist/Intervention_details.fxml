@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="test" prefHeight="460.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dentist.Intervention_Details">
+    <Button layoutX="205.0" layoutY="398.0" mnemonicParsing="false" onAction="#cancel" prefHeight="39.0" prefWidth="142.0" text="Submit" />
+    <Button id="add_patient" fx:id="submit" layoutX="15.0" layoutY="398.0" mnemonicParsing="false" onAction="#submit" prefHeight="39.0" prefWidth="149.0" text="PDF" />
+    <Label layoutX="102.0" layoutY="38.0" prefHeight="17.0" prefWidth="170.0" style="-fx-alignment: center;" text="Intervention N°">
+        <font>
+            <Font size="21.0" />
+        </font>
+    </Label>
+    <DatePicker layoutX="15.0" layoutY="107.0" promptText="date prevue" />
+    <DatePicker layoutX="199.0" layoutY="107.0" promptText="Date reelle" />
+    <ComboBox fx:id="categorieIntervention" layoutX="14.0" layoutY="150.0" prefHeight="25.0" prefWidth="202.0" promptText="Categorie d'intervention" />
+    <CheckBox layoutX="15.0" layoutY="368.0" mnemonicParsing="false" text="CheckBox" />
+    <TextArea layoutX="14.0" layoutY="238.0" prefHeight="123.0" prefWidth="343.0" promptText="Remarques" />
+    <ComboBox layoutX="14.0" layoutY="192.0" prefHeight="25.0" prefWidth="202.0" promptText="Type de Radio" />
+</AnchorPane>

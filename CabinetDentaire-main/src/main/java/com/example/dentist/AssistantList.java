@@ -35,7 +35,7 @@ public class AssistantList {
 
     @FXML
     public void switch_add_Assistant(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("ADD_Patient.fxml"));
+        root = FXMLLoader.load(getClass().getResource("Intervention_details.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(root, 362, 267);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());

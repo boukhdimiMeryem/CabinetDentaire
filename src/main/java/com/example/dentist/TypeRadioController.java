@@ -205,5 +205,7 @@ public class TypeRadioController implements Initializable{
         stage.setTitle("Patient");
         stage.show();
     }
+
+
 }
 

@@ -11,3 +11,6 @@ lkd,lkad,	11
 nlknk	12
 nlknk	13
 nlknk	14
+test	15
+test	16
+patient_test	17	1

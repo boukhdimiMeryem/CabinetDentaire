@@ -154,7 +154,7 @@ public class PatientList implements Initializable {
     void insert(ActionEvent event) throws IOException {
         Patient patient = new Patient(Integer.parseInt(tfID.getText()),tfNOM.getText(),tfPRENOM.getText(),tfDATE.getText(),tfSexe.getText(),tfCIN.getText());
         table.getItems().add(patient);
-        /*root = FXMLLoader.load(getClass().getResource("ADD_Patient.fxml"));
+        /*root = FXMLLoader.load(getClass().getResource("Intervention_details.fxml"));
         stage = new Stage();
         scene = new Scene(root, 362, 267);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
@@ -224,7 +224,7 @@ public class PatientList implements Initializable {
 
     @FXML
     public void switch_add_patient(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("ADD_Patient.fxml"));
+        root = FXMLLoader.load(getClass().getResource("Intervention_details.fxml"));
         stage = new Stage();
         scene = new Scene(root, 362, 267);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());

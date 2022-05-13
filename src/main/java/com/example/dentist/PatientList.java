@@ -6,9 +6,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
@@ -32,12 +34,6 @@ import java.util.Scanner;
 
 
 public class PatientList implements Initializable {
-
-
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
-
     @FXML
     private TableView<Patient> table;
     @FXML
@@ -112,6 +108,9 @@ public class PatientList implements Initializable {
     @FXML
     private Button zoom;
 
+    private Parent root;
+    private Stage stage;
+    private Scene scene;
 
     public PatientList() throws ParseException {
 
@@ -181,15 +180,7 @@ public class PatientList implements Initializable {
     /*public void refresh(ActionEvent event) {
         refresh_table();
     }*/
-    public void overview(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("acceuil.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 1024, 700);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
-    }
+
 
     public void manip_assistant(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Assistant_List.fxml"));
@@ -282,17 +273,6 @@ public class PatientList implements Initializable {
         stage.setResizable(false);
         stage.setTitle("ajouter un patient");
         stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    public void goToSettings(ActionEvent event) throws  IOException {
-        root = FXMLLoader.load(getClass().getResource("Settings.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root,1024,700);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        stage.setScene(scene);
-        stage.setTitle("Patient");
         stage.show();
     }
 }

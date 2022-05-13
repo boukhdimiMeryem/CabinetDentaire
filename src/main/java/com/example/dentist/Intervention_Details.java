@@ -1,17 +1,23 @@
 package com.example.dentist;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.net.URL;
 import java.text.ParseException;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class ADDPatient {
+public class Intervention_Details implements Initializable {
     @FXML
     private TextField CIN;
 
@@ -26,6 +32,9 @@ public class ADDPatient {
 
     @FXML
     private DatePicker DateNaissance;
+
+    @FXML
+    private ComboBox<String> categorieIntervention;
 
 
     public int NextID() throws FileNotFoundException {
@@ -43,7 +52,7 @@ public class ADDPatient {
     }
 
     public void submit(ActionEvent event) throws FileNotFoundException, ParseException {
-        String dateN = DateNaissance.getValue().toString();
+        /*String dateN = DateNaissance.getValue().toString();
         String data="";
         //il faut penser a utiliser une autre methode d ecriture dans le fichier qui support l ecriture dans plusieur files en meme temps afin d optimiser le programme
         Patient p = new Patient(NextID(),this.Nom.getText(),this.Prenom.getText(),dateN,this.Sexe.getText(),this.CIN.getText());
@@ -84,13 +93,21 @@ public class ADDPatient {
             f2.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
 
     public void cancel(ActionEvent event) throws IOException {
-        final Node source = (Node) event.getSource();
+        /*final Node source = (Node) event.getSource();
         final Stage stagee = (Stage) source.getScene().getWindow();
-        stagee.close();
+        stagee.close();*/
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ObservableList<String> options =
+                FXCollections.observableArrayList();
+        categorieIntervention.setItems(options);
+
     }
 }

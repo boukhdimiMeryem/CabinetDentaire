@@ -3,16 +3,16 @@ package com.example.dentist;
 import javafx.scene.control.Button;
 
 public class Calendrier {
-    private int Monday;
-    private int Tuesday;
-    private int Wednesday;
-    private int Thursday;
-    private int Friday;
-    private int Saturday;
-    private int Sunday;
+    private String Monday;
+    private String Tuesday;
+    private String Wednesday;
+    private String Thursday;
+    private String Friday;
+    private String Saturday;
+    private String Sunday;
     private Button enter;
 
-    public Calendrier(int m, int tu, int w, int th, int f, int sa, int su){
+    public Calendrier(String m, String tu, String w, String th, String f, String sa, String su){
         this.Monday=m;
         this.Tuesday=tu;
         this.Wednesday=w;
@@ -23,68 +23,59 @@ public class Calendrier {
         this.enter=new Button("Check this week");
     }
 
-    public int getMonday() {
+    public String getMonday() {
         return Monday;
     }
 
-    public void setMonday(int monday) {
+    public void setMonday(String monday) {
         Monday = monday;
     }
 
-    public int getTuesday() {
+    public String getTuesday() {
         return Tuesday;
     }
 
-    public void setTuesday(int tuesday) {
+    public void setTuesday(String tuesday) {
         Tuesday = tuesday;
     }
 
-    public int getWednesday() {
+    public String getWednesday() {
         return Wednesday;
     }
 
-    public void setWednesday(int wednesday) {
+    public void setWednesday(String wednesday) {
         Wednesday = wednesday;
     }
 
-    public int getThursday() {
+    public String getThursday() {
         return Thursday;
     }
 
-    public void setThursday(int thursday) {
+    public void setThursday(String thursday) {
         Thursday = thursday;
     }
 
-    public int getFriday() {
+    public String getFriday() {
         return Friday;
     }
 
-    public void setFriday(int friday) {
+    public void setFriday(String friday) {
         Friday = friday;
     }
 
-    public int getSaturday() {
+    public String getSaturday() {
         return Saturday;
     }
 
-    public void setSaturday(int saturday) {
+    public void setSaturday(String saturday) {
         Saturday = saturday;
     }
 
-    public int getSunday() {
+    public String getSunday() {
         return Sunday;
     }
 
-    public void setSunday(int sunday) {
+    public void setSunday(String sunday) {
         Sunday = sunday;
-    }
-
-
-    public Button getEnter() {
-        return enter;
-    }
-
-    public void setEnter(Button enter) {
-        this.enter = enter;
     }
 }

@@ -21,8 +21,8 @@ public class acceuil {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root,1024,700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setResizable(false);
         stage.setScene(scene);
-        stage.setTitle("Patient");
         stage.show();
     }
 
@@ -31,8 +31,8 @@ public class acceuil {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root,1024,700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setResizable(false);
         stage.setScene(scene);
-        stage.setTitle("Patient");
         stage.show();
     }
 
@@ -47,8 +47,8 @@ public class acceuil {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root,1024,700);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        stage.setResizable(false);
         stage.setScene(scene);
-        stage.setTitle("Patient");
         stage.show();
     }
 
